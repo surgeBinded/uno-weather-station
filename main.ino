@@ -44,7 +44,7 @@ void setup()
   oled.clearDisplay(); // clear display
 
   oled.setTextSize(2);          // text size
-  oled.setTextColor(WHITE); 
+  oled.setTextColor(WHITE);
 }
 
 void loop()
@@ -65,15 +65,17 @@ void loop()
 
     oled.setCursor(0, 10);        // position to display
     oled.print(DHT.getHumidity());
-    oled.setCursor(66, 10); 
+    oled.setCursor(66, 10);
     oled.print("%");
-  
+
     oled.setCursor(0, 40);        // position to display
     oled.print(DHT.getTemperature());
     int offsetX = 63;
     int offsetY = 42;
     float radius = 2;
 
+
+    // this code draws a circle near the "C" character for celsius
     for(int i = 0; i <= 11; i++) {
         const float angle = 2 * PI / 12 * i;
         int posX = round(cos(angle) * radius) + offsetX;
@@ -88,4 +90,3 @@ void loop()
 
 
 // -- END OF FILE --
-
